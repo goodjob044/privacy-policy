@@ -1,90 +1,171 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy</title>
+
 <style>
 body {
   font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: auto;
-  padding: 40px;
-  line-height: 1.6;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
 }
-h1, h2 {
+
+.container {
+  max-width: 850px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  line-height: 1.7;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.last-updated {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-top: 30px;
   color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+strong {
+  color: #000;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
 }
 </style>
 </head>
+
 <body>
 
+<div class="container">
+
 <h1>Privacy Policy</h1>
+<p class="last-updated"><strong>Last updated: 2026</strong></p>
 
-<p><strong>Last updated: 2026</strong></p>
+<h2>1. Introduction</h2>
+<p>
+This real-time screen translation application respects user privacy and is committed to protecting user data.
+</p>
+<p>
+This application operates locally on the device and does not collect personal data.
+</p>
 
-Privacy Policy
-Last updated: 2026
-<p><strong>1. Introduction</strong></p>
-<p>This real-time screen translation application respects user privacy and is committed to protecting user data.</p>
-<p>This application operates locally on the device and does not collect personal data.</p>
-
-<p><strong>2. Data Collection</strong></p>
-<p>The application:<p>
-<p> Does NOT collect personal data</p>
-<p> Does NOT store screen captures</p>
-<p> Does NOT transmit screen content to external servers</p>
-<p> Does NOT share data with third parties</p>
+<h2>2. Data Collection</h2>
+<p>The application:</p>
+<ul>
+  <li>Does NOT collect personal data</li>
+  <li>Does NOT store screen captures</li>
+  <li>Does NOT transmit screen content to external servers</li>
+  <li>Does NOT share data with third parties</li>
+</ul>
 <p>All processing is performed locally on the user's device.</p>
 
-<p><strong>3. Screen Capture (MediaProjection API)</strong></p>
+<h2>3. Screen Capture (MediaProjection API)</h2>
 <p>The application uses Android's official MediaProjection API to:</p>
-<p>Temporarily capture on-screen content</p>
-<p>Detect text using OCR</p>
-<p>Translate detected text</p>
-<p>Important:</p>
-<p>Captured images are processed in memory only</p>
-<p>No screen content is stored</p>
-<p>No screen content is transmitted</p>
-<p>Data is immediately discarded after processing</p>
+<ul>
+  <li>Temporarily capture on-screen content</li>
+  <li>Detect text using OCR</li>
+  <li>Translate detected text</li>
+</ul>
+
+<p><strong>Important:</strong></p>
+<ul>
+  <li>Captured images are processed in memory only</li>
+  <li>No screen content is stored</li>
+  <li>No screen content is transmitted</li>
+  <li>Data is immediately discarded after processing</li>
+</ul>
+
 <p>The screen capture feature is activated only after explicit user permission.</p>
 
-<p><strong>4. Overlay Permission</strong></p>
+<h2>4. Overlay Permission</h2>
 <p>The application uses the "Display over other apps" permission solely to:</p>
-<p>Show a floating translation button</p>
-<p>Allow users to select a screen area for translation</p>
+<ul>
+  <li>Show a floating translation button</li>
+  <li>Allow users to select a screen area for translation</li>
+</ul>
 <p>The overlay does not monitor, record, or intercept user interactions.</p>
 
-<p><strong>5. Text Processing</strong></p>
-<p>Detected text is processed locally.</p>
-<p>If online translation services are used, only the extracted text is transmitted for translation — not the full screen image.</p>
-<p>No personal identifiers are attached to translation requests.</p>
+<h2>5. Text Processing</h2>
+<p>
+Detected text is processed locally.
+</p>
+<p>
+If online translation services are used, only the extracted text is transmitted for translation — not the full screen image.
+</p>
+<p>
+No personal identifiers are attached to translation requests.
+</p>
 
-<p><strong>6. Permissions Used</strong></p>
+<h2>6. Permissions Used</h2>
 <p>The app may request the following permissions:</p>
-<p>Display over other apps (Overlay)</p>
-<p>Screen capture permission (MediaProjection)</p>
-<p>Internet access (only if online translation is enabled)</p>
+<ul>
+  <li>Display over other apps (Overlay)</li>
+  <li>Screen capture permission (MediaProjection)</li>
+  <li>Internet access (only if online translation is enabled)</li>
+</ul>
 <p>These permissions are strictly required for the core functionality of the app.</p>
 
-<p><strong>7. Advertisements (If Applicable)</strong></p>
+<h2>7. Advertisements (If Applicable)</h2>
 <p>If advertisements are integrated in the future:</p>
-<p>Third-party ad providers may use anonymous advertising identifiers</p>
-<p>The application itself does not collect personal user data</p>
+<ul>
+  <li>Third-party ad providers may use anonymous advertising identifiers</li>
+  <li>The application itself does not collect personal user data</li>
+</ul>
 
-<p><strong>8. Data Security</strong></p>
+<h2>8. Data Security</h2>
 <p>All data processing occurs locally.</p>
 <p>No external database or user account system is used.</p>
 
-<p><strong>9. Children's Privacy</strong></p>
+<h2>9. Children's Privacy</h2>
 <p>This application does not knowingly collect personal data from children.</p>
 
-<p><strong>10. Changes to This Policy</strong></p>
-<p>This Privacy Policy may be updated periodically. Updates will be published on this page.</p>
+<h2>10. Changes to This Policy</h2>
+<p>
+This Privacy Policy may be updated periodically. Updates will be published on this page.
+</p>
 
-<p><strong>11. Contact</strong></p>
-<p>For privacy-related questions:</p>
-<p>Email: gd.hunterdev@gmail.com</p> 
+<h2>11. Contact</h2>
+<p>
+For privacy-related questions:
+</p>
+<p>
+<strong>Email:</strong> gd.hunterdev@gmail.com
+</p>
 
+<div class="footer">
+© 2026 LiveLens. All rights reserved.
+</div>
+
+</div>
 
 </body>
 </html>
