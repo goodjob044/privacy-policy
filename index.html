@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy</title>
-
+<title>Privacy Policy - LiveLens</title>
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -12,7 +11,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .container {
   max-width: 850px;
   margin: 40px auto;
@@ -22,38 +20,19 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   line-height: 1.7;
 }
-
-h1 {
-  text-align: center;
-  margin-bottom: 10px;
+h1 { text-align: center; margin-bottom: 6px; }
+.last-updated { text-align: center; color: #666; margin-bottom: 30px; }
+h2 { margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 5px; color: #222; }
+ul { padding-left: 20px; }
+li { margin-bottom: 8px; }
+a { color: #1a73e8; }
+.note {
+  background-color: #f0f4ff;
+  border-left: 4px solid #1a73e8;
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin-top: 12px;
 }
-
-.last-updated {
-  text-align: center;
-  color: #666;
-  margin-bottom: 30px;
-}
-
-h2 {
-  margin-top: 30px;
-  color: #222;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
-}
-
-ul {
-  margin-top: 10px;
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-strong {
-  color: #000;
-}
-
 .footer {
   margin-top: 40px;
   font-size: 14px;
@@ -62,110 +41,173 @@ strong {
 }
 </style>
 </head>
-
 <body>
-
 <div class="container">
 
 <h1>Privacy Policy</h1>
-<p class="last-updated"><strong>Last updated: 2026</strong></p>
+<p class="last-updated"><strong>Last updated: May 1, 2026</strong></p>
 
 <h2>1. Introduction</h2>
 <p>
-This real-time screen translation application respects user privacy and is committed to protecting user data.
-</p>
-<p>
-This application operates locally on the device and does not collect personal data.
+LiveLens is a real-time screen translation application. This policy explains how the application
+handles data and what information, if any, is transmitted externally. Privacy is a core principle
+of this application — no personal data is collected, stored, or sold.
 </p>
 
-<h2>2. Data Collection</h2>
-<p>The application:</p>
+<h2>2. Summary of Data Practices</h2>
 <ul>
-  <li>Does NOT collect personal data</li>
-  <li>Does NOT store screen captures</li>
-  <li>Does NOT transmit screen content to external servers</li>
-  <li>Does NOT share data with third parties</li>
+  <li>Does <strong>not</strong> collect personal data</li>
+  <li>Does <strong>not</strong> store screen captures beyond immediate processing</li>
+  <li>Does <strong>not</strong> transmit screen images or extracted text to external servers</li>
+  <li>Does <strong>not</strong> share user data with third parties</li>
+  <li>Uses an internet connection <strong>only</strong> to download translation language models
+      from Google's servers — no user content is involved in this process</li>
 </ul>
-<p>All processing is performed locally on the user's device.</p>
 
 <h2>3. Screen Capture (MediaProjection API)</h2>
-<p>The application uses Android's official MediaProjection API to:</p>
+<p>
+LiveLens uses Android's official MediaProjection API to capture on-screen content for the
+purpose of text detection and translation. The following applies to all screen captures:
+</p>
 <ul>
-  <li>Temporarily capture on-screen content</li>
-  <li>Detect text using OCR</li>
-  <li>Translate detected text</li>
+  <li>Captured images are temporarily written to the application's <strong>private cache
+      directory</strong> for inter-process communication between the capture service and
+      the main application</li>
+  <li>These files are <strong>deleted immediately</strong> after processing is complete</li>
+  <li>Cache files are <strong>never accessible</strong> to other applications</li>
+  <li>Captured content is <strong>never transmitted</strong> to any external server</li>
+</ul>
+<div class="note">
+  Screen capture functionality is activated <strong>only after explicit user permission</strong>
+  is granted via Android's standard permission dialog.
+</div>
+
+<h2>4. Overlay Permission (Display Over Other Apps)</h2>
+<p>
+LiveLens requests the "Display over other apps" permission exclusively to:
+</p>
+<ul>
+  <li>Display a floating translation button on screen</li>
+  <li>Allow users to select a screen region for translation</li>
+  <li>Show translation results in an overlay interface</li>
+</ul>
+<p>
+The overlay does <strong>not</strong> monitor, record, or intercept any user interactions
+outside of the application's own interface elements.
+</p>
+
+<h2>5. Camera</h2>
+<p>
+The camera permission is used solely to allow users to take photos of physical objects
+(such as documents, signs, or menus) for text extraction and translation. Photos taken
+through LiveLens are:
+</p>
+<ul>
+  <li>Processed locally on the device</li>
+  <li>Never stored permanently by the application</li>
+  <li>Never transmitted to external servers</li>
 </ul>
 
-<p><strong>Important:</strong></p>
+<h2>6. Text Recognition (OCR)</h2>
+<p>
+Text recognition is performed <strong>entirely on-device</strong> using
+<strong>Google ML Kit's Text Recognition</strong> engine. This engine uses models
+bundled within Google Play Services and does not require an internet connection to function.
+</p>
 <ul>
-  <li>Captured images are processed in memory only</li>
-  <li>No screen content is stored</li>
-  <li>No screen content is transmitted</li>
-  <li>Data is immediately discarded after processing</li>
+  <li>No screen images are uploaded for recognition</li>
+  <li>No extracted text is sent to external servers during OCR</li>
+  <li>All processing happens locally in real time</li>
 </ul>
 
-<p>The screen capture feature is activated only after explicit user permission.</p>
-
-<h2>4. Overlay Permission</h2>
-<p>The application uses the "Display over other apps" permission solely to:</p>
+<h2>7. Translation</h2>
+<p>
+Translation is performed <strong>on-device</strong> using
+<strong>Google ML Kit's Translation API</strong>. Once a language model is downloaded,
+all translation processing occurs locally — no text is transmitted externally for translation.
+</p>
+<p>
+<strong>Language model downloads:</strong> Before a language pair can be used for the
+first time, the corresponding translation model must be downloaded from Google's servers.
+During this download:
+</p>
 <ul>
-  <li>Show a floating translation button</li>
-  <li>Allow users to select a screen area for translation</li>
+  <li>Only the model file is downloaded — no user content is transmitted</li>
+  <li>The download occurs over an encrypted (HTTPS) connection</li>
+  <li>Downloaded models are stored locally on the device for future offline use</li>
 </ul>
-<p>The overlay does not monitor, record, or intercept user interactions.</p>
+<div class="note">
+  Language model downloads are subject to Google's Privacy Policy:<br>
+  <a href="https://policies.google.com/privacy" target="_blank">
+    https://policies.google.com/privacy
+  </a>
+</div>
 
-<h2>5. Text Processing</h2>
-<p>
-Detected text is processed locally.
-</p>
-<p>
-If online translation services are used, only the extracted text is transmitted for translation — not the full screen image.
-</p>
-<p>
-No personal identifiers are attached to translation requests.
-</p>
-
-<h2>6. Permissions Used</h2>
-<p>The app may request the following permissions:</p>
+<h2>8. Third-Party SDKs</h2>
+<p>LiveLens integrates the following Google SDK:</p>
 <ul>
-  <li>Display over other apps (Overlay)</li>
-  <li>Screen capture permission (MediaProjection)</li>
-  <li>Internet access (only if online translation is enabled)</li>
+  <li>
+    <strong>Google ML Kit</strong> (Text Recognition + Translation) —
+    used for on-device OCR and translation. Model downloads are handled by
+    Google's infrastructure. No user data is shared with Google through
+    these SDKs during normal application use.
+    <br>
+    <a href="https://developers.google.com/ml-kit/terms" target="_blank">
+      ML Kit Terms of Service
+    </a>
+  </li>
 </ul>
-<p>These permissions are strictly required for the core functionality of the app.</p>
+<p>No advertising SDKs or analytics SDKs are integrated in this application.</p>
 
-<h2>7. Advertisements (If Applicable)</h2>
-<p>If advertisements are integrated in the future:</p>
+<h2>9. Permissions Used</h2>
 <ul>
-  <li>Third-party ad providers may use anonymous advertising identifiers</li>
-  <li>The application itself does not collect personal user data</li>
+  <li><strong>Display over other apps (SYSTEM_ALERT_WINDOW)</strong> —
+      required to display the floating overlay interface</li>
+  <li><strong>Screen capture (MediaProjection)</strong> —
+      required to capture screen content for text extraction</li>
+  <li><strong>Camera (CAMERA)</strong> —
+      required to take photos of physical text for translation</li>
+  <li><strong>Internet (INTERNET)</strong> —
+      required solely to download translation language models from Google ML Kit servers.
+      Used one time per language pair; not required after models are downloaded.</li>
+  <li><strong>Foreground Service (FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PROJECTION,
+      FOREGROUND_SERVICE_SPECIAL_USE)</strong> —
+      required to keep the capture and overlay services running while the user
+      is using other applications</li>
 </ul>
 
-<h2>8. Data Security</h2>
-<p>All data processing occurs locally.</p>
-<p>No external database or user account system is used.</p>
-
-<h2>9. Children's Privacy</h2>
-<p>This application does not knowingly collect personal data from children.</p>
-
-<h2>10. Changes to This Policy</h2>
+<h2>10. Data Security</h2>
 <p>
-This Privacy Policy may be updated periodically. Updates will be published on this page.
+All sensitive data processing occurs locally on the device. Temporary files created during
+screen capture are stored in the application's private cache directory and are deleted
+immediately after use. No external database, user account, or cloud storage is used.
 </p>
 
-<h2>11. Contact</h2>
+<h2>11. Children's Privacy</h2>
 <p>
-For privacy-related questions:
+LiveLens does not knowingly collect personal data from children under the age of 13,
+or any other age threshold defined by applicable local law. The application does not
+collect personal data from any user regardless of age.
 </p>
+
+<h2>12. Changes to This Policy</h2>
 <p>
-<strong>Email:</strong> gd.hunterdev@gmail.com
+This Privacy Policy may be updated periodically to reflect changes in the application
+or applicable regulations. The "Last updated" date at the top of this page will be
+revised accordingly. Continued use of the application after any update constitutes
+acceptance of the revised policy.
 </p>
+
+<h2>13. Contact</h2>
+<p>
+For any questions or concerns regarding this Privacy Policy, please contact:
+</p>
+<p><strong>Email:</strong> <a href="mailto:votre@email.com">gd.hunterdev@gmail.com</a></p>
 
 <div class="footer">
-© 2026 LiveLens. All rights reserved.
+  © 2026 LiveLens. All rights reserved.
 </div>
 
 </div>
-
 </body>
 </html>
